@@ -562,6 +562,113 @@
     weighted(); finalExam();
   }
 
+  /* ---------- VAT ---------- */
+  function initVat() {
+    function t1() {
+      var net = toNum($("#v1-net").value);
+      var rate = toNum($("#v1-rate").value);
+      if (!isFinite(net) || !isFinite(rate)) { setText("v1-amount", "—"); setText("v1-total", "—"); return; }
+      var amount = (net * rate) / 100;
+      setText("v1-amount", money(amount));
+      setText("v1-total", money(net + amount));
+    }
+    function t2() {
+      var gross = toNum($("#v2-gross").value);
+      var rate = toNum($("#v2-rate").value);
+      if (!isFinite(gross) || !isFinite(rate) || rate <= -100) { setText("v2-net", "—"); setText("v2-amount", "—"); return; }
+      var net = gross / (1 + rate / 100);
+      setText("v2-net", money(net));
+      setText("v2-amount", money(gross - net));
+    }
+    eachInput(["v1-net", "v1-rate"], t1);
+    eachInput(["v2-gross", "v2-rate"], t2);
+    Array.prototype.forEach.call(document.querySelectorAll("[data-vat]"), function (btn) {
+      btn.addEventListener("click", function () {
+        var group = btn.parentElement;
+        Array.prototype.forEach.call(group.querySelectorAll("[data-vat]"), function (b) {
+          b.classList.toggle("active", b === btn);
+        });
+        var which = btn.getAttribute("data-vat-target");
+        var input = document.getElementById(which + "-rate");
+        if (input) input.value = btn.getAttribute("data-vat");
+        if (which === "v1") t1(); else t2();
+      });
+    });
+    t1(); t2();
+  }
+
+  /* ---------- Salary ---------- */
+  function initSalary() {
+    function blank() {
+      ["s-hourly", "s-daily", "s-weekly", "s-monthly", "s-annual"].forEach(function (id) { setText(id, "—"); });
+    }
+    function compute() {
+      var v = toNum($("#s-value").value);
+      var basis = $("#s-basis").value;
+      var hpw = toNum($("#s-hours").value);
+      var wpy = toNum($("#s-weeks").value);
+      if (!isFinite(v) || v < 0 || !isFinite(hpw) || hpw <= 0 || !isFinite(wpy) || wpy <= 0 || wpy > 52) return blank();
+      var annual;
+      if (basis === "hourly") annual = v * hpw * wpy;
+      else if (basis === "daily") annual = v * (hpw / 5) * wpy;
+      else if (basis === "weekly") annual = v * wpy;
+      else if (basis === "monthly") annual = v * 12;
+      else annual = v;
+      var hourly = annual / (hpw * wpy);
+      setText("s-hourly", money(hourly));
+      setText("s-daily", money(hourly * (hpw / 5)));
+      setText("s-weekly", money(hourly * hpw));
+      setText("s-monthly", money(annual / 12));
+      setText("s-annual", money(annual));
+    }
+    ["s-value", "s-basis", "s-hours", "s-weeks"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) {
+        el.addEventListener("input", compute);
+        el.addEventListener("change", compute);
+      }
+    });
+    compute();
+  }
+
+  /* ---------- Date + / − days ---------- */
+  function initDateCalc() {
+    function blank() {
+      setText("dc-result", "—");
+      setText("dc-span", "—");
+    }
+    function compute() {
+      var dVal = $("#dc-date").value;
+      var n = toNum($("#dc-days").value);
+      var working = $("#dc-working").checked;
+      if (!dVal || !isFinite(n)) return blank();
+      var start = new Date(dVal + "T00:00:00");
+      if (isNaN(start)) return blank();
+      n = Math.trunc(n);
+      if (Math.abs(n) > 200000) return blank();
+      var d = new Date(start.getTime());
+      if (!working) {
+        d.setDate(d.getDate() + n);
+      } else {
+        var step = n > 0 ? 1 : -1;
+        var left = Math.abs(n);
+        var guard = 0;
+        while (left > 0 && guard++ < 500000) {
+          d.setDate(d.getDate() + step);
+          var day = d.getDay();
+          if (day !== 0 && day !== 6) left--;
+        }
+      }
+      setText("dc-result", d.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" }));
+      var span = Math.round((d - start) / 86400000);
+      setText("dc-span", span.toLocaleString("en-US") + " calendar days after the start date" + (working ? " (weekends skipped while counting)" : ""));
+    }
+    eachInput(["dc-date", "dc-days"], compute);
+    var cb = document.getElementById("dc-working");
+    if (cb) cb.addEventListener("change", compute);
+    compute();
+  }
+
   var pages = {
     loan: initLoan,
     mortgage: initMortgage,
@@ -575,7 +682,10 @@
     rent: initRent,
     fuel: initFuel,
     grade: initGrade,
-    age: initAge
+    age: initAge,
+    vat: initVat,
+    salary: initSalary,
+    datecalc: initDateCalc
   };
   if (pages[page]) pages[page]();
 

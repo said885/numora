@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add or Subtract Days from a Date — Working Days Too | Numora</title>
+  <meta name="description" content="Free date calculator: add or subtract any number of days from a date, with an option to count working days only (Mon–Fri). Instant result with the weekday named.">
+  <link rel="canonical" href="https://said885.github.io/numora/date-calculator.html">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:title" content="Date Calculator (add / subtract days) — Numora">
+  <meta property="og:description" content="Add or subtract days from any date, calendar or working days.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://said885.github.io/numora/date-calculator.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9308383679852394" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-9308383679852394">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What date is 30 days from today?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Enter today's date and 30 in the days field — the calculator returns the exact date and weekday, handling month lengths and leap years automatically." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I add working days only?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tick the \"working days only\" option — Saturdays and Sundays are then skipped while counting, which is what deadlines expressed in business days require." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I subtract days from a date?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Enter a negative number of days. The calculator moves backwards on the calendar, in working days too if that option is ticked." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-page="datecalc">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Numora</a>
+      <details class="nav-menu">
+        <summary>All calculators</summary>
+        <div class="nav-panel">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="loan-calculator.html">Loan &amp; EMI</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound interest</a>
+          <a href="bmi-calculator.html">BMI</a>
+          <a href="unit-converter.html">Unit converter</a>
+          <a href="date-difference-calculator.html">Date difference</a>
+          <a href="discount-calculator.html">Discount</a>
+          <a href="tip-calculator.html">Tip &amp; bill split</a>
+          <a href="percentage-calculator.html">Percentage</a>
+          <a href="rent-split-calculator.html">Rent split</a>
+          <a href="fuel-calculator.html">Fuel cost</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="vat-calculator.html">VAT &amp; price</a>
+          <a href="salary-calculator.html">Salary</a>
+          <a href="date-calculator.html">Date + / − days</a>
+          <a href="age-calculator.html">Age</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Date calculator (add / subtract days)</p>
+
+    <section class="calc-layout">
+      <div class="panel">
+        <h2>Move a date</h2>
+        <div class="field">
+          <label for="dc-date">Starting date</label>
+          <input id="dc-date" type="date" value="2026-10-09">
+        </div>
+        <div class="field">
+          <label for="dc-days">Days to add (use a negative number to subtract)</label>
+          <input id="dc-days" type="number" inputmode="numeric" step="1" value="100">
+        </div>
+        <div class="field">
+          <label><input id="dc-working" type="checkbox"> Count working days only (skip Sat &amp; Sun)</label>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="value" id="dc-result" style="font-size:1.35rem">—</div>
+        <div class="label">Resulting date</div>
+        <p class="label" id="dc-span" style="margin-top:10px">—</p>
+      </div>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9308383679852394" data-ad-slot="1818181818" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="prose">
+      <h2>Calendar days vs working days</h2>
+      <p>The default mode adds or subtracts <strong>calendar days</strong> — every day counts, including weekends and leap days, and the calculator uses real month lengths rather than a flat 30-day approximation. Tick the <strong>working days</strong> option and the count skips Saturdays and Sundays entirely, which is what contracts mean by "within 10 business days".</p>
+      <p>Enter a <strong>negative number</strong> to move backwards: a payment due 15 days before an event, a notice period that runs backwards from a departure date, or a cooling-off window counted back from a signature.</p>
+
+      <h2>Where this comes up in practice</h2>
+      <ul>
+        <li><strong>Contract deadlines:</strong> "net 30" invoices, notice periods, and delivery windows expressed in business days.</li>
+        <li><strong>Planning:</strong> medication cycles, subscription renewals, project milestones, travel with a fixed return.</li>
+        <li><strong>Money dates:</strong> interest accrual windows and payment due dates feeding into the <a href="loan-calculator.html">loan calculator</a>.</li>
+      </ul>
+      <p class="note">Public holidays are not excluded in working-days mode — national holiday calendars vary, so subtract those manually if your deadline depends on them. Dates are interpreted in your device's local time zone.</p>
+
+      <h2>Related tools</h2>
+      <p>Measuring the span between two dates instead of moving one? Use the <a href="date-difference-calculator.html">date difference calculator</a>, which also counts working days between two dates.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Numora. Free to use. Results are estimates, not professional advice.</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosure.html">Affiliate disclosure</a>
+        <a href="https://github.com/said885">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

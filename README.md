@@ -1,6 +1,6 @@
 # Numora — free online calculators
 
-A complete, deployable, monetizable website: **13 calculators** (loan/EMI, mortgage, compound interest, BMI, unit converter, date difference, discount, tip, percentage, rent split, fuel cost, grade, age), zero dependencies, static hosting, instant results in the browser.
+A complete, deployable, monetizable website: **16 calculators** (loan/EMI, mortgage, compound interest, BMI, unit converter, date difference, date add/subtract, discount, tip, percentage, VAT, salary, rent split, fuel cost, grade, age), zero dependencies, static hosting, instant results in the browser.
 
 - **Stack:** plain HTML/CSS/JS. No build step, no framework, no runtime cost.
 - **Privacy by design:** calculations run client-side; nothing the user types is transmitted.
@@ -43,7 +43,7 @@ python3 -m http.server 8080
 - **Timeline:** calculator sites usually rank slowly (3–9 months) because the niche is competitive. Growth levers, in order: Search Console iterations, adding 10–20 more long-tail calculators, adding genuinely useful explainer content, multilingual versions.
 
 ### How to grow it
-- The 13 launch calculators cover the highest-intent keywords in this niche. Keep adding one page at a time (each new page = new indexable keyword). Next candidates by search demand: VAT/tax-inclusive price, hourly-to-salary, split bill with unequal orders, date add/subtract, ideal body weight, tip by country, loan early-repayment savings, retirement drawdown.
+- The 16 launch calculators cover the highest-intent keywords in this niche. Keep adding one page at a time (each new page = new indexable keyword). Next candidates by search demand: split bill with unequal orders, ideal body weight, tip by country, loan early-repayment savings, retirement drawdown, emergency-fund goal, currency converter (needs a daily-rates source).
 - Interlink pages (already scaffolded) — internal links are the fastest ranking lever on a new site.
 - Translate the top pages: same content, `hreflang` tags, doubled addressable market.
 - Post genuinely useful answers linking back on forums/Reddit/Quora — real engagement, never automation.

@@ -72,6 +72,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://said885.github.io/numora/vat-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://said885.github.io/numora/salary-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://said885.github.io/numora/date-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://said885.github.io/numora/about.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
