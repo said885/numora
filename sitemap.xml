@@ -1,74 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Replace YOUR-DOMAIN.example with your real domain, then validate in Google Search Console. -->
+<!-- Sitemap for Numora — submit in Google Search Console and Bing Webmaster Tools. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://YOUR-DOMAIN.example/</loc>
+    <loc>https://said885.github.io/numora/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/loan-calculator.html</loc>
+    <loc>https://said885.github.io/numora/loan-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/mortgage-calculator.html</loc>
+    <loc>https://said885.github.io/numora/mortgage-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/compound-interest-calculator.html</loc>
+    <loc>https://said885.github.io/numora/compound-interest-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/bmi-calculator.html</loc>
+    <loc>https://said885.github.io/numora/bmi-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/unit-converter.html</loc>
+    <loc>https://said885.github.io/numora/unit-converter.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/date-difference-calculator.html</loc>
+    <loc>https://said885.github.io/numora/date-difference-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/discount-calculator.html</loc>
+    <loc>https://said885.github.io/numora/discount-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/tip-calculator.html</loc>
+    <loc>https://said885.github.io/numora/tip-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/percentage-calculator.html</loc>
+    <loc>https://said885.github.io/numora/percentage-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/rent-split-calculator.html</loc>
+    <loc>https://said885.github.io/numora/rent-split-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/fuel-calculator.html</loc>
+    <loc>https://said885.github.io/numora/fuel-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/grade-calculator.html</loc>
+    <loc>https://said885.github.io/numora/grade-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN.example/age-calculator.html</loc>
+    <loc>https://said885.github.io/numora/age-calculator.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://said885.github.io/numora/about.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
