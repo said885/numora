@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Percentage Calculator — X% of Y, Increase &amp; Decrease | Numora</title>
+  <meta name="description" content="Free percentage calculator with three tools: what is X% of Y, X is what percent of Y, and percentage increase or decrease. Instant results.">
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/percentage-calculator.html">
+  <meta property="og:title" content="Percentage Calculator — Numora">
+  <meta property="og:description" content="Three percentage tools in one page: of, what-percent, and change.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN.example/percentage-calculator.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate a percentage of a number?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Divide the percentage by 100 and multiply by the number. For example, 15% of 240 is (15 / 100) × 240 = 36." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you find what percent one number is of another?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Divide the first number by the second, then multiply by 100. For example, 45 is what percent of 60: (45 / 60) × 100 = 75%." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate percentage increase or decrease?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Subtract the old value from the new value, divide by the old value, and multiply by 100. Going from 80 to 100 is a 25% increase; going from 100 to 80 is a 20% decrease — the percentages differ because the base differs." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-page="percent">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Numora</a>
+      <details class="nav-menu">
+        <summary>All calculators</summary>
+        <div class="nav-panel">
+          <a href="index.html">Home</a>
+          <a href="loan-calculator.html">Loan &amp; EMI</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound interest</a>
+          <a href="bmi-calculator.html">BMI</a>
+          <a href="unit-converter.html">Unit converter</a>
+          <a href="date-difference-calculator.html">Date difference</a>
+          <a href="discount-calculator.html">Discount</a>
+          <a href="tip-calculator.html">Tip &amp; bill split</a>
+          <a href="percentage-calculator.html">Percentage</a>
+          <a href="rent-split-calculator.html">Rent split</a>
+          <a href="fuel-calculator.html">Fuel cost</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="age-calculator.html">Age</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Percentage calculator</p>
+
+    <section class="calc-layout">
+      <div class="panel">
+        <h2>1. What is X% of Y?</h2>
+        <div class="row">
+          <div class="field">
+            <label for="p1-x">X (%)</label>
+            <input id="p1-x" type="number" inputmode="decimal" step="any" value="15">
+          </div>
+          <div class="field">
+            <label for="p1-y">of Y</label>
+            <input id="p1-y" type="number" inputmode="decimal" step="any" value="240">
+          </div>
+        </div>
+        <div class="result"><div class="value" id="p1-out">—</div></div>
+      </div>
+
+      <div class="panel">
+        <h2>2. X is what % of Y?</h2>
+        <div class="row">
+          <div class="field">
+            <label for="p2-x">X</label>
+            <input id="p2-x" type="number" inputmode="decimal" step="any" value="45">
+          </div>
+          <div class="field">
+            <label for="p2-y">of Y</label>
+            <input id="p2-y" type="number" inputmode="decimal" step="any" value="60">
+          </div>
+        </div>
+        <div class="result"><div class="value" id="p2-out">—</div></div>
+      </div>
+
+      <div class="panel">
+        <h2>3. Percentage change (increase / decrease)</h2>
+        <div class="row">
+          <div class="field">
+            <label for="p3-x">From (old value)</label>
+            <input id="p3-x" type="number" inputmode="decimal" step="any" value="80">
+          </div>
+          <div class="field">
+            <label for="p3-y">To (new value)</label>
+            <input id="p3-y" type="number" inputmode="decimal" step="any" value="100">
+          </div>
+        </div>
+        <div class="result"><div class="value" id="p3-out">—</div></div>
+      </div>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="prose">
+      <h2>The three questions people actually ask</h2>
+      <p>Almost every "percentage problem" is one of these three:</p>
+      <ol>
+        <li><strong>Part of a whole</strong> — "what is 15% of 240?" Multiply: (15 ÷ 100) × 240 = 36.</li>
+        <li><strong>Share of a whole</strong> — "45 is what percent of 60?" Divide and scale: (45 ÷ 60) × 100 = 75%.</li>
+        <li><strong>Relative change</strong> — "it went from 80 to 100." Difference over the original: (100 − 80) ÷ 80 = +25%.</li>
+      </ol>
+
+      <h2>The classic trap: asymmetric change</h2>
+      <p>A value that rises 50% and then falls 50% does not return to where it started — it ends 25% below the original. That is because each percentage is applied to a different base. The same effect explains why a 20% discount followed by a 20% surcharge is not a wash, and why "our rates dropped 1% from 10%" (a 10% relative drop) is a very different claim from "our rates dropped 1% from 2%".</p>
+      <p class="note">Percentages can also exceed 100 (a company that triples revenue grew 300%) or be negative (a decrease). Both are normal — the calculator handles them without complaint.</p>
+
+      <h2>Related tools</h2>
+      <p>Applying percentages to money? The <a href="loan-calculator.html">loan calculator</a> shows how interest compounds over a term, and the <a href="tip-calculator.html">tip calculator</a> is the everyday case of "add X% to this bill".</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Numora. Free to use. Results are estimates, not professional advice.</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosure.html">Affiliate disclosure</a>
+        <a href="mailto:hello@YOUR-DOMAIN.example">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

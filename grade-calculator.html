@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade Calculator — Weighted Average &amp; Final Exam Grade | Numora</title>
+  <meta name="description" content="Free grade calculator: weighted average across up to five assignments, plus the grade you need on the final exam to reach your target.">
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/grade-calculator.html">
+  <meta property="og:title" content="Grade Calculator — Numora">
+  <meta property="og:description" content="Weighted average and the grade needed on the final exam.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN.example/grade-calculator.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is a weighted grade calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Multiply each score by its weight, add the results, then divide by the total weight entered. An 80 worth 20%, a 90 worth 30% and a 70 worth 50% gives (16 + 27 + 35) ÷ 100 = 78%." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate the grade needed on the final?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Required = (target − current × (1 − final weight)) ÷ final weight. If your current average is 80%, the target is 85% and the final is worth 20%, you need (85 − 80 × 0.8) ÷ 0.2 = 105% — not achievable." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do my weights not total 100%?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Courses often publish weights for graded components only, with the rest ungraded so far. The calculator normalizes by the weight entered, but the result is only the true course grade once the weights reach 100%." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-page="grade">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Numora</a>
+      <details class="nav-menu">
+        <summary>All calculators</summary>
+        <div class="nav-panel">
+          <a href="index.html">Home</a>
+          <a href="loan-calculator.html">Loan &amp; EMI</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound interest</a>
+          <a href="bmi-calculator.html">BMI</a>
+          <a href="unit-converter.html">Unit converter</a>
+          <a href="date-difference-calculator.html">Date difference</a>
+          <a href="discount-calculator.html">Discount</a>
+          <a href="tip-calculator.html">Tip &amp; bill split</a>
+          <a href="percentage-calculator.html">Percentage</a>
+          <a href="rent-split-calculator.html">Rent split</a>
+          <a href="fuel-calculator.html">Fuel cost</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="age-calculator.html">Age</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Grade calculator</p>
+
+    <section class="calc-layout">
+      <div class="panel">
+        <h2>1. Weighted average</h2>
+        <div class="row-3" style="margin-bottom:8px">
+          <span class="label">Component</span><span class="label">Score (%)</span><span class="label">Weight (%)</span>
+        </div>
+        <div class="row-3"><div class="field"><label for="g-s1">Homework</label><input id="g-s1" type="number" inputmode="decimal" min="0" step="0.1" value="80"></div><div class="field"><label for="g-w1">Weight</label><input id="g-w1" type="number" inputmode="decimal" min="0" step="1" value="20"></div><div></div></div>
+        <div class="row-3"><div class="field"><label for="g-s2">Midterm</label><input id="g-s2" type="number" inputmode="decimal" min="0" step="0.1" value="90"></div><div class="field"><label for="g-w2">Weight</label><input id="g-w2" type="number" inputmode="decimal" min="0" step="1" value="30"></div><div></div></div>
+        <div class="row-3"><div class="field"><label for="g-s3">Project</label><input id="g-s3" type="number" inputmode="decimal" min="0" step="0.1" value="70"></div><div class="field"><label for="g-w3">Weight</label><input id="g-w3" type="number" inputmode="decimal" min="0" step="1" value="50"></div><div></div></div>
+        <div class="row-3"><div class="field"><label for="g-s4">Component 4</label><input id="g-s4" type="number" inputmode="decimal" min="0" step="0.1" placeholder="-"></div><div class="field"><label for="g-w4">Weight</label><input id="g-w4" type="number" inputmode="decimal" min="0" step="1" placeholder="0"></div><div></div></div>
+        <div class="row-3"><div class="field"><label for="g-s5">Component 5</label><input id="g-s5" type="number" inputmode="decimal" min="0" step="0.1" placeholder="-"></div><div class="field"><label for="g-w5">Weight</label><input id="g-w5" type="number" inputmode="decimal" min="0" step="1" placeholder="0"></div><div></div></div>
+        <div class="result" style="margin-top:6px">
+          <div class="value" id="g-average">—</div>
+          <div class="label">Weighted average</div>
+          <p class="label" id="g-wsum" style="margin-top:8px">—</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>2. Grade needed on the final</h2>
+        <div class="row-3">
+          <div class="field">
+            <label for="g-current">Current average (%)</label>
+            <input id="g-current" type="number" inputmode="decimal" step="0.1" value="80">
+          </div>
+          <div class="field">
+            <label for="g-desired">Target grade (%)</label>
+            <input id="g-desired" type="number" inputmode="decimal" step="0.1" value="85">
+          </div>
+          <div class="field">
+            <label for="g-fw">Final is worth (%)</label>
+            <input id="g-fw" type="number" inputmode="decimal" min="0.1" max="100" step="0.1" value="20">
+          </div>
+        </div>
+        <div class="result">
+          <div class="value" id="g-required">—</div>
+          <div class="label">Required grade on the final</div>
+          <p class="label" id="g-feasible" style="margin-top:8px"></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1515151515" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="prose">
+      <h2>How the weighted average works</h2>
+      <p>Each score is multiplied by its weight, the products are summed, and the result is divided by the total weight entered. With an 80 worth 20%, a 90 worth 30% and a 70 worth 50%: (80×20 + 90×30 + 70×50) ÷ 100 = <strong>78%</strong>. The calculator flags when the weights don't yet total 100% — common mid-semester, when some components simply haven't been graded yet.</p>
+
+      <h2>The final-exam question, answered early</h2>
+      <p>The formula behind tool 2 is <strong>required = (target − current × (1 − w)) ÷ w</strong>, where w is the final's weight as a decimal. The three outcomes are worth checking before exam season:</p>
+      <ul>
+        <li><strong>Required under 100%:</strong> achievable — that is the number to aim for.</li>
+        <li><strong>Required over 100%:</strong> mathematically impossible; the calculator tells you the maximum grade still reachable instead. Knowing this early lets you redirect effort to other courses.</li>
+        <li><strong>Required at or below zero:</strong> the target is already guaranteed — a zero on the final still leaves you at the target.</li>
+      </ul>
+      <p class="note">Some institutions round, curve or cap grades, and some weight by points rather than percentages. When the syllabus disagrees with this calculator, the syllabus wins.</p>
+
+      <h2>Related tools</h2>
+      <p>Working out what percentage of the course the final represents? The <a href="percentage-calculator.html">percentage calculator</a> handles "X is what % of Y" directly.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Numora. Free to use. Results are estimates, not professional advice.</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosure.html">Affiliate disclosure</a>
+        <a href="mailto:hello@YOUR-DOMAIN.example">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

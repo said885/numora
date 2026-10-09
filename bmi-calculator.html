@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMI Calculator — Metric &amp; Imperial, With Weight Category | Numora</title>
+  <meta name="description" content="Free BMI calculator in kg/cm or lb/ft/in. Instant Body Mass Index with the standard underweight, healthy, overweight and obese categories.">
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/bmi-calculator.html">
+  <meta property="og:title" content="BMI Calculator — Numora">
+  <meta property="og:description" content="Body Mass Index in metric or imperial with the standard weight category.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN.example/bmi-calculator.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a healthy BMI?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For adults, the standard categories are: under 18.5 underweight, 18.5 to 24.9 healthy weight, 25 to 29.9 overweight, and 30 or above obese." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BMI work for children and teenagers?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. For people under 20, BMI must be interpreted with age- and sex-specific percentile charts. This calculator is for adults only." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is BMI criticized?",
+        "acceptedAnswer": { "@type": "Answer", "text": "BMI compares weight to height without measuring body composition, so it can overstate adiposity in very muscular people and understate it in older adults who have lost muscle mass. It is a screening tool, not a diagnosis." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-page="bmi">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Numora</a>
+      <details class="nav-menu">
+        <summary>All calculators</summary>
+        <div class="nav-panel">
+          <a href="index.html">Home</a>
+          <a href="loan-calculator.html">Loan &amp; EMI</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound interest</a>
+          <a href="bmi-calculator.html">BMI</a>
+          <a href="unit-converter.html">Unit converter</a>
+          <a href="date-difference-calculator.html">Date difference</a>
+          <a href="discount-calculator.html">Discount</a>
+          <a href="tip-calculator.html">Tip &amp; bill split</a>
+          <a href="percentage-calculator.html">Percentage</a>
+          <a href="rent-split-calculator.html">Rent split</a>
+          <a href="fuel-calculator.html">Fuel cost</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="age-calculator.html">Age</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › BMI calculator</p>
+
+    <section class="calc-layout">
+      <div class="panel">
+        <h2>Your measurements</h2>
+        <div class="radio-group" role="radiogroup" aria-label="Unit system">
+          <label><input type="radio" name="bmi-unit" value="metric" checked> Metric (kg, cm)</label>
+          <label><input type="radio" name="bmi-unit" value="imperial"> Imperial (lb, ft/in)</label>
+        </div>
+        <div class="field">
+          <label for="bmi-weight">Weight (<span id="bmi-weight-unit">kg</span>)</label>
+          <input id="bmi-weight" type="number" inputmode="decimal" min="1" step="0.1" value="70">
+        </div>
+        <div id="bmi-metric">
+          <div class="field">
+            <label for="bmi-height">Height (cm)</label>
+            <input id="bmi-height" type="number" inputmode="decimal" min="50" step="0.5" value="175">
+          </div>
+        </div>
+        <div id="bmi-imperial" hidden>
+          <div class="row">
+            <div class="field">
+              <label for="bmi-ft">Height — feet</label>
+              <input id="bmi-ft" type="number" inputmode="numeric" min="1" step="1" value="5">
+            </div>
+            <div class="field">
+              <label for="bmi-in">Height — inches</label>
+              <input id="bmi-in" type="number" inputmode="decimal" min="0" step="0.5" value="9">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="value" id="bmi-value">—</div>
+        <div class="label">Your BMI</div>
+        <p style="margin:12px 0 0"><strong id="bmi-label">Enter your numbers above</strong></p>
+        <p class="label" style="margin-top:6px">Adult categories: &lt;18.5 underweight · 18.5–24.9 healthy · 25–29.9 overweight · ≥30 obese</p>
+      </div>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="prose">
+      <h2>How BMI is calculated</h2>
+      <p>Body Mass Index is weight divided by height squared. In metric units: <strong>BMI = kg ÷ m²</strong>. In imperial units the equivalent is <strong>BMI = 703 × lb ÷ in²</strong>. The categories above are the ones used by the World Health Organization and the CDC for adults aged 20 and over.</p>
+
+      <h2>What BMI does and does not tell you</h2>
+      <p>BMI is a population-level screening tool. It correlates with health outcomes at scale but says nothing about an individual's body composition: muscle is denser than fat, so a trained athlete can land in the "overweight" range with a healthy body-fat percentage. Age also matters — after ~70, the healthiest BMI range shifts slightly upward.</p>
+      <ul>
+        <li><strong>More informative than BMI alone:</strong> waist circumference, blood pressure, blood glucose and lipid panel.</li>
+        <li><strong>Not applicable to:</strong> children and teenagers (use percentile charts), pregnant women, or people with edema.</li>
+      </ul>
+      <p class="note">This calculator is for adults and provides an estimate only. It is not medical advice — discuss weight and health questions with a physician.</p>
+
+      <h2>Related tools</h2>
+      <p>Tracking units while following a programme from another country? The <a href="unit-converter.html">unit converter</a> handles kilograms ↔ pounds and stones instantly.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Numora. Free to use. Results are estimates, not professional advice.</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosure.html">Affiliate disclosure</a>
+        <a href="mailto:hello@YOUR-DOMAIN.example">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+  <script>
+    (function () {
+      var label = document.getElementById("bmi-weight-unit");
+      Array.prototype.forEach.call(document.querySelectorAll('input[name="bmi-unit"]'), function (el) {
+        el.addEventListener("change", function () {
+          label.textContent = el.value === "metric" ? "kg" : "lb";
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

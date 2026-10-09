@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compound Interest Calculator — With Monthly Contributions | Numora</title>
+  <meta name="description" content="Free compound interest calculator: future value of savings with an initial deposit, monthly contributions and annual interest. Includes a year-by-year growth table.">
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/compound-interest-calculator.html">
+  <meta property="og:title" content="Compound Interest Calculator — Numora">
+  <meta property="og:description" content="Future value with monthly contributions and a yearly growth table.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN.example/compound-interest-calculator.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is compound interest calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Each period, interest is earned on the principal plus all previously earned interest. With monthly contributions the future value is FV = P(1 + r/12)^(12t) + C × [((1 + r/12)^(12t) − 1) / (r/12)], where P is the initial amount, C the monthly contribution, r the annual rate and t the years." }
+      },
+      {
+        "@type": "Question",
+        "name": "What return rate should I use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For long-run stock market planning many use 6–7% nominal per year after inflation is excluded; for bonds or savings accounts use the current yield. This calculator assumes a constant rate, which real markets do not deliver." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this account for taxes and fees?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. It models gross growth. Tax-advantaged accounts, management fees and inflation all change the real outcome; treat the result as an upper-bound estimate." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-page="compound">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Numora</a>
+      <details class="nav-menu">
+        <summary>All calculators</summary>
+        <div class="nav-panel">
+          <a href="index.html">Home</a>
+          <a href="loan-calculator.html">Loan &amp; EMI</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound interest</a>
+          <a href="bmi-calculator.html">BMI</a>
+          <a href="unit-converter.html">Unit converter</a>
+          <a href="date-difference-calculator.html">Date difference</a>
+          <a href="discount-calculator.html">Discount</a>
+          <a href="tip-calculator.html">Tip &amp; bill split</a>
+          <a href="percentage-calculator.html">Percentage</a>
+          <a href="rent-split-calculator.html">Rent split</a>
+          <a href="fuel-calculator.html">Fuel cost</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="age-calculator.html">Age</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Compound interest calculator</p>
+
+    <section class="calc-layout">
+      <div class="panel">
+        <h2>Your plan</h2>
+        <div class="row">
+          <div class="field">
+            <label for="c-initial">Initial amount ($)</label>
+            <input id="c-initial" type="number" inputmode="decimal" min="0" step="100" value="10000">
+          </div>
+          <div class="field">
+            <label for="c-monthly">Monthly contribution ($)</label>
+            <input id="c-monthly" type="number" inputmode="decimal" min="0" step="10" value="500">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="c-rate">Annual return (%)</label>
+            <input id="c-rate" type="number" inputmode="decimal" min="0" step="0.1" value="7">
+          </div>
+          <div class="field">
+            <label for="c-years">Years</label>
+            <input id="c-years" type="number" inputmode="numeric" min="1" max="100" step="1" value="20">
+          </div>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="value" id="c-final">—</div>
+        <div class="label">Future value</div>
+        <div class="result-list" style="margin-top:18px">
+          <div class="item"><span>Total contributed</span><b id="c-invested">—</b></div>
+          <div class="item"><span>Interest earned</span><b id="c-interest">—</b></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="9999999999" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="prose">
+      <h2>How compounding actually works</h2>
+      <p>Simple interest pays only on the original amount. Compound interest pays on the original amount <em>plus everything already earned</em>, every period. With monthly contributions the future value is:</p>
+      <p><strong>FV = P × (1 + r/12)<sup>12t</sup> + C × [((1 + r/12)<sup>12t</sup> − 1) ÷ (r/12)]</strong></p>
+      <p>where P is the initial deposit, C the monthly contribution, r the annual return as a decimal, and t the number of years. The year-by-year table above shows the two curves diverging: early on, growth is mostly your contributions; later, compounding does more work than you do.</p>
+
+      <h2>What the numbers teach</h2>
+      <ul>
+        <li><strong>Time beats amount.</strong> Starting ten years earlier often outweighs contributing twice as much — compounding has more periods to act.</li>
+        <li><strong>Rate matters exponentially.</strong> The difference between 5% and 7% over 25 years is roughly 60% more final capital, not 40%.</li>
+        <li><strong>Fees compound too.</strong> A 1% annual fee on the same plan can consume 20–25% of the final balance over long horizons.</li>
+        <li><strong>Inflation is the reverse.</strong> At 2.5% inflation, money's purchasing power halves in ~28 years; a "safe" 0% real return is a slow loss.</li>
+      </ul>
+      <p class="note">Assumes a constant annual return compounded monthly, no taxes, no fees and no inflation. Real markets are volatile; this is a planning estimate, not investment advice.</p>
+
+      <h2>Related tools</h2>
+      <p>Wondering how long until a goal? Adjust the years until the future value matches your target. Comparing with paying down debt instead? The <a href="loan-calculator.html">loan calculator</a> shows the guaranteed "return" of eliminating interest.</p>
+    </article>
+
+    <section class="prose">
+      <h2>Year-by-year growth</h2>
+      <div class="table-wrap">
+        <table class="calc-table">
+          <thead><tr><th>Year</th><th>Total contributed</th><th>Value at year end</th></tr></thead>
+          <tbody id="c-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Numora. Free to use. Results are estimates, not professional advice.</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosure.html">Affiliate disclosure</a>
+        <a href="mailto:hello@YOUR-DOMAIN.example">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan &amp; EMI Calculator — Monthly Payment, Total Interest | Numora</title>
+  <meta name="description" content="Free loan calculator: see your monthly EMI payment, total interest and total cost for any personal loan, car loan or mortgage. Updates instantly.">
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/loan-calculator.html">
+  <meta property="og:title" content="Loan &amp; EMI Calculator — Numora">
+  <meta property="og:description" content="Monthly payment, total interest and total cost for any loan. Free and instant.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN.example/loan-calculator.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is the monthly loan payment calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "With the standard amortization formula: M = P × r / (1 − (1 + r)^−n), where P is the principal, r the monthly interest rate (annual rate ÷ 12) and n the total number of monthly payments." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator include taxes and insurance?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. It calculates principal and interest only. For mortgages, property taxes and insurance are added by your lender and are not included here." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a longer loan term better?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A longer term lowers the monthly payment but increases the total interest paid, often by a large amount. Compare the total-cost figure, not just the monthly figure." }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://YOUR-DOMAIN.example/" },
+      { "@type": "ListItem", "position": 2, "name": "Loan Calculator", "item": "https://YOUR-DOMAIN.example/loan-calculator.html" }
+    ]
+  }
+  </script>
+</head>
+<body data-page="loan">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Numora</a>
+      <details class="nav-menu">
+        <summary>All calculators</summary>
+        <div class="nav-panel">
+          <a href="index.html">Home</a>
+          <a href="loan-calculator.html">Loan &amp; EMI</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound interest</a>
+          <a href="bmi-calculator.html">BMI</a>
+          <a href="unit-converter.html">Unit converter</a>
+          <a href="date-difference-calculator.html">Date difference</a>
+          <a href="discount-calculator.html">Discount</a>
+          <a href="tip-calculator.html">Tip &amp; bill split</a>
+          <a href="percentage-calculator.html">Percentage</a>
+          <a href="rent-split-calculator.html">Rent split</a>
+          <a href="fuel-calculator.html">Fuel cost</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="age-calculator.html">Age</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Loan calculator</p>
+
+    <section class="calc-layout">
+      <div class="panel">
+        <h2>Loan details</h2>
+        <div class="field">
+          <label for="loan-amount">Loan amount ($)</label>
+          <input id="loan-amount" type="number" inputmode="decimal" min="0" step="100" value="30000">
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="loan-rate">Annual interest rate (%)</label>
+            <input id="loan-rate" type="number" inputmode="decimal" min="0" step="0.01" value="6.5">
+          </div>
+          <div class="field">
+            <label for="loan-years">Term (years)</label>
+            <input id="loan-years" type="number" inputmode="numeric" min="0.5" step="0.5" value="5">
+          </div>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="value" id="loan-monthly">—</div>
+        <div class="label">Monthly payment (EMI)</div>
+        <div class="result-list" style="margin-top:18px">
+          <div class="item"><span>Total amount repaid</span><b id="loan-total">—</b></div>
+          <div class="item"><span>Total interest paid</span><b id="loan-interest">—</b></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="prose">
+      <h2>How the loan calculator works</h2>
+      <p>This tool uses the standard amortization formula applied to fixed-rate loans — personal loans, auto loans, mortgages and any other loan repaid in equal monthly instalments:</p>
+      <p><strong>M = P × r ÷ (1 − (1 + r)<sup>−n</sup>)</strong></p>
+      <p>where <strong>P</strong> is the amount borrowed, <strong>r</strong> is the monthly interest rate (your annual rate divided by 12), and <strong>n</strong> is the total number of monthly payments (years × 12). The calculator also shows the total amount repaid over the life of the loan and the total interest — the two numbers that reveal the true cost of borrowing.</p>
+
+      <h2>Getting a realistic number</h2>
+      <ul>
+        <li><strong>Use the rate you were actually quoted</strong>, not the advertised "from" rate. Lenders set rates based on your credit profile, the loan amount and the term.</li>
+        <li><strong>Check the APR instead of the nominal rate</strong> when comparing offers. The APR includes mandatory fees, so two loans with the same nominal rate can cost very differently.</li>
+        <li><strong>Add taxes and insurance for mortgages.</strong> This calculator covers principal and interest only; escrow payments are set by your lender.</li>
+        <li><strong>Compare the total-interest figure.</strong> Extending a $30,000 loan from 5 to 7 years can cut the monthly payment by ~20% while adding thousands in interest.</li>
+      </ul>
+
+      <p class="note">Results are estimates for planning purposes and do not constitute financial advice. Your lender's amortization schedule is the authoritative figure.</p>
+
+      <h2>Related tools</h2>
+      <p>Working out how much of a raise or bonus goes to savings? Use the <a href="percentage-calculator.html">percentage calculator</a>. Comparing unit prices while travelling abroad? Try the <a href="unit-converter.html">unit converter</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Numora. Free to use. Results are estimates, not professional advice.</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosure.html">Affiliate disclosure</a>
+        <a href="mailto:hello@YOUR-DOMAIN.example">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

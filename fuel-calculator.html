@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fuel Cost Calculator — Trip Gas Cost, L/100km, km/L &amp; MPG | Numora</title>
+  <meta name="description" content="Free fuel calculator: trip fuel cost from distance, consumption (L/100km, km/L or MPG) and fuel price. Shows litres used and cost per kilometre.">
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/fuel-calculator.html">
+  <meta property="og:title" content="Fuel Cost Calculator — Numora">
+  <meta property="og:description" content="Trip fuel cost from distance, consumption and price. L/100km, km/L and MPG supported.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN.example/fuel-calculator.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert MPG to L/100km?",
+        "acceptedAnswer": { "@type": "Answer", "text": "L/100km = 235.214583 ÷ MPG. So 30 MPG (US) is about 7.84 L/100km. Note that US gallons and UK gallons differ, so check which MPG scale your figure uses." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my real consumption higher than the official figure?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Official figures are measured in laboratory cycles. Cold starts, city traffic, air conditioning, roof boxes, tyre pressure and driving style commonly add 10–25% in real use." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does fuel actually cost per kilometre?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Multiply consumption in L/100km by the price per litre and divide by 100. At 8 L/100km and $1.60/L that is $0.128 per kilometre — this calculator shows it directly." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-page="fuel">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Numora</a>
+      <details class="nav-menu">
+        <summary>All calculators</summary>
+        <div class="nav-panel">
+          <a href="index.html">Home</a>
+          <a href="loan-calculator.html">Loan &amp; EMI</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound interest</a>
+          <a href="bmi-calculator.html">BMI</a>
+          <a href="unit-converter.html">Unit converter</a>
+          <a href="date-difference-calculator.html">Date difference</a>
+          <a href="discount-calculator.html">Discount</a>
+          <a href="tip-calculator.html">Tip &amp; bill split</a>
+          <a href="percentage-calculator.html">Percentage</a>
+          <a href="rent-split-calculator.html">Rent split</a>
+          <a href="fuel-calculator.html">Fuel cost</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="age-calculator.html">Age</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Fuel cost calculator</p>
+
+    <section class="calc-layout">
+      <div class="panel">
+        <h2>The trip</h2>
+        <div class="row">
+          <div class="field">
+            <label for="f-distance">Distance</label>
+            <input id="f-distance" type="number" inputmode="decimal" min="0" step="1" value="450">
+          </div>
+          <div class="field">
+            <label for="f-dist-unit">Unit</label>
+            <select id="f-dist-unit">
+              <option value="km" selected>Kilometres</option>
+              <option value="mi">Miles</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="f-eff">Consumption</label>
+            <input id="f-eff" type="number" inputmode="decimal" min="0" step="0.1" value="8">
+          </div>
+          <div class="field">
+            <label for="f-eff-unit">Scale</label>
+            <select id="f-eff-unit">
+              <option value="l100" selected>Litres / 100 km</option>
+              <option value="kml">Kilometres / litre</option>
+              <option value="mpg">MPG (US)</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="f-price">Fuel price</label>
+            <input id="f-price" type="number" inputmode="decimal" min="0" step="0.01" value="1.6">
+          </div>
+          <div class="field">
+            <label for="f-price-unit">Per</label>
+            <select id="f-price-unit">
+              <option value="liter" selected>Litre</option>
+              <option value="gal">US gallon</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="value" id="f-cost">—</div>
+        <div class="label">Fuel cost for the trip</div>
+        <div class="result-list" style="margin-top:18px">
+          <div class="item"><span>Fuel used</span><b id="f-liters">—</b></div>
+          <div class="item"><span>Cost per kilometre</span><b id="f-perkm">—</b></div>
+          <div class="item"><span>Effective consumption</span><b id="f-per100">—</b></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1414141414" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="prose">
+      <h2>One trip, three consumption scales</h2>
+      <p>Europe and most of the world quote consumption in litres per 100 kilometres; some drivers prefer kilometres per litre; the US uses miles per gallon. They measure opposite things — L/100km is consumption (lower is better), MPG is economy (higher is better) — which is why a bigger engine can look "better" when someone switches scales mid-conversation.</p>
+      <p>Conversions used here: <strong>1 US gallon = 3.785411784 litres</strong>, <strong>1 mile = 1.609344 km</strong>, and <strong>L/100km = 235.214583 ÷ MPG (US)</strong>. Enter your car's real tank-log figures rather than the brochure number — the difference is usually 10–25%.</p>
+
+      <h2>What actually moves the cost</h2>
+      <ul>
+        <li><strong>Speed:</strong> highway fuel use typically rises sharply above ~90 km/h (55 mph) due to air resistance, which grows with the square of speed.</li>
+        <li><strong>Cold starts:</strong> short urban trips in winter can burn far more fuel per kilometre than the same car's average, because the engine runs rich until warm.</li>
+        <li><strong>Load and drag:</strong> roof boxes, towing, under-inflated tyres and open windows all add measurable consumption.</li>
+        <li><strong>The cost-per-kilometre figure</strong> is the useful one for comparing against a train ticket or a company mileage reimbursement rate.</li>
+      </ul>
+      <p class="note">Fuel prices and densities vary by country and blend (diesel, E10, LPG); treat the result as a close estimate. Electric vehicles: enter the equivalent consumption in kWh/100 km with your electricity price per kWh.</p>
+
+      <h2>Related tools</h2>
+      <p>Converting between miles and kilometres by hand? Use the <a href="unit-converter.html">unit converter</a>. Budgeting the trip cost as a share of a group holiday? The <a href="rent-split-calculator.html">rent split calculator</a> apportions any shared expense.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Numora. Free to use. Results are estimates, not professional advice.</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosure.html">Affiliate disclosure</a>
+        <a href="mailto:hello@YOUR-DOMAIN.example">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

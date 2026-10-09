@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discount Calculator — Percentage Off &amp; Original Price | Numora</title>
+  <meta name="description" content="Free discount calculator: final price after a percentage off, how much you save, and the reverse tool — original price from the sale price.">
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/discount-calculator.html">
+  <meta property="og:title" content="Discount Calculator — Numora">
+  <meta property="og:description" content="Final price after % off, savings, and reverse: original price from sale price.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN.example/discount-calculator.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate a discounted price?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Multiply the original price by (1 − discount/100). A $200 item at 25% off costs 200 × 0.75 = $150, saving $50." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you find the original price from the sale price?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Divide the sale price by (1 − discount/100). A $150 item at 25% off originally cost 150 ÷ 0.75 = $200." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you combine two discounts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Apply them sequentially, not by adding: 20% then 10% off is 0.80 × 0.90 = 0.72, a total 28% off — not 30%." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-page="discount">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Numora</a>
+      <details class="nav-menu">
+        <summary>All calculators</summary>
+        <div class="nav-panel">
+          <a href="index.html">Home</a>
+          <a href="loan-calculator.html">Loan &amp; EMI</a>
+          <a href="mortgage-calculator.html">Mortgage</a>
+          <a href="compound-interest-calculator.html">Compound interest</a>
+          <a href="bmi-calculator.html">BMI</a>
+          <a href="unit-converter.html">Unit converter</a>
+          <a href="date-difference-calculator.html">Date difference</a>
+          <a href="discount-calculator.html">Discount</a>
+          <a href="tip-calculator.html">Tip &amp; bill split</a>
+          <a href="percentage-calculator.html">Percentage</a>
+          <a href="rent-split-calculator.html">Rent split</a>
+          <a href="fuel-calculator.html">Fuel cost</a>
+          <a href="grade-calculator.html">Grade</a>
+          <a href="age-calculator.html">Age</a>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Discount calculator</p>
+
+    <section class="calc-layout">
+      <div class="panel">
+        <h2>1. Price after a discount</h2>
+        <div class="row">
+          <div class="field">
+            <label for="dis-price">Original price ($)</label>
+            <input id="dis-price" type="number" inputmode="decimal" min="0" step="0.01" value="200">
+          </div>
+          <div class="field">
+            <label for="dis-pct">Discount (%)</label>
+            <input id="dis-pct" type="number" inputmode="decimal" min="0" max="100" step="1" value="25">
+          </div>
+        </div>
+        <div class="result">
+          <div class="value" id="dis-final">—</div>
+          <div class="label">You pay</div>
+          <p style="margin:10px 0 0">You save <strong id="dis-save">—</strong></p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>2. Original price from the sale price</h2>
+        <div class="row">
+          <div class="field">
+            <label for="dis-paid">Sale price ($)</label>
+            <input id="dis-paid" type="number" inputmode="decimal" min="0" step="0.01" value="150">
+          </div>
+          <div class="field">
+            <label for="dis-pct2">Discount that was applied (%)</label>
+            <input id="dis-pct2" type="number" inputmode="decimal" min="0" max="99" step="1" value="25">
+          </div>
+        </div>
+        <div class="result">
+          <div class="value" id="dis-original">—</div>
+          <div class="label">Original price</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1212121212" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <article class="prose">
+      <h2>The two questions shoppers actually have</h2>
+      <p>First: "what does this actually cost?" Multiply the price by (1 − discount ÷ 100). Second, and just as common: "what did it cost before the sale?" — visible on price tags in many countries but not all. Divide the sale price by (1 − discount ÷ 100). Both directions are above.</p>
+
+      <h2>Discounts don't add up — they multiply</h2>
+      <p>The most expensive mental shortcut in shopping is adding discount percentages. A 20% coupon followed by a 10% member offer is 0.80 × 0.90 = 0.72 — a total of <strong>28% off, not 30%</strong>. Three stacked discounts of 10% each is 0.9³ = 0.729, i.e. 27.1% off, not 30%.</p>
+      <ul>
+        <li><strong>Percent off vs amount off:</strong> on cheap items, a fixed amount ("$15 off") usually beats a percentage; on expensive ones, the reverse. The crossover is at amount ÷ percent × 100.</li>
+        <li><strong>Two-for-one</strong> is exactly 50% off only if you would have bought both anyway.</li>
+        <li><strong>Check the reference price.</strong> A discount from an inflated "list price" can be smaller than it looks — the reverse tool above exposes it quickly.</li>
+      </ul>
+
+      <h2>Related tools</h2>
+      <p>Need the underlying percentage math beyond shopping? The <a href="percentage-calculator.html">percentage calculator</a> covers all three standard forms. Splitting a group purchase? The <a href="rent-split-calculator.html">rent split calculator</a> apportions any shared cost by income share.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Numora. Free to use. Results are estimates, not professional advice.</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosure.html">Affiliate disclosure</a>
+        <a href="mailto:hello@YOUR-DOMAIN.example">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
